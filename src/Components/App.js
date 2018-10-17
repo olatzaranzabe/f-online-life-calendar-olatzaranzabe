@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../Stylesheets/App.css';
 import Home from './Home';
 import Editor from './Editor';
+import { Link, Route, Switch } from 'react-router-dom';
 
 class App extends Component {
   constructor(props) {
@@ -19,10 +20,28 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        < Home
-          handleAddFace={this.handleAddFace}
-        />
-        < Editor />
+        <nav>
+          <ul>
+            <li><Link to='/'></Link></li>
+            <li><Link to='/editor'></Link></li>
+          </ul>
+        </nav>
+        <Switch>
+          <Route
+            exact path='/'
+            render={(props) => 
+            < Home
+              handleAddFace={this.handleAddFace}
+            />
+            } />
+          <Route
+            path='/editor'
+            render={(props) =>
+              < Editor />
+            } />
+        </Switch>
+
+
       </div>
     );
   }

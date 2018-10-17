@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../Stylesheets/Home.css';
+import { Link } from 'react-router-dom';
 
 class Home extends Component {
     render() {
@@ -8,9 +9,11 @@ class Home extends Component {
         } = this.props;
         return (
             <div>
-                <header onClick={handleAddFace} className="home__header">
-                    <p className="home__add">+</p>
-                </header>
+                <Link to='/editor'>
+                    <header onClick={handleAddFace} className="home__header">
+                        <p className="home__add">+</p>
+                    </header>
+                </Link>
             </div>
         );
     }

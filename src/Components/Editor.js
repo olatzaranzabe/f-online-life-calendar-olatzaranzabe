@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Editor extends Component {
     constructor(props) {
@@ -47,9 +48,14 @@ class Editor extends Component {
                         type="text"
                     />
                 </fieldset>
-                <div className="button">
+                <Link to='/'>
+                <div className="form__submit">
                     <button type="submit">Save</button>
                 </div>
+                <div className="form__cancel">
+                    <button type="submit">Cancel</button>
+                </div>
+                </Link>
             </form>
         );
     }
