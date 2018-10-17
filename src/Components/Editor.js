@@ -5,6 +5,7 @@ class Editor extends Component {
     render() {
         const {
             handleCreateMood,
+            handleStateMood,
             handleDelete,
             handleMessage,
             handleDate
@@ -29,8 +30,9 @@ class Editor extends Component {
                             type="radio"
                             id="happy"
                             name="mood"
-                            value="happy"
+                            value=":)"
                             required="required"
+                            onChange={handleStateMood}
                             defaultChecked
                         />
                         <label htmlFor="happy">:)</label>
@@ -40,8 +42,9 @@ class Editor extends Component {
                             type="radio"
                             id="sad"
                             name="mood"
-                            value="sad"
+                            value=":("
                             required="required"
+                            onChange={handleStateMood}
                         />
                         <label htmlFor="sad">:(</label>
                     </div>
