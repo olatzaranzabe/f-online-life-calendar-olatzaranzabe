@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class Editor extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {}
-    }
     render() {
+        const {
+            handleCreateMood,
+            handleDelete
+        } = this.props;
         return (
             <form>
                 <fieldset>
@@ -24,8 +24,9 @@ class Editor extends Component {
                         <input
                             type="radio"
                             id="happy"
-                            name="happy"
+                            name="mood"
                             value="happy"
+                            required="required"
                         />
                         <label htmlFor="happy">:)</label>
                     </div>
@@ -33,8 +34,9 @@ class Editor extends Component {
                         <input
                             type="radio"
                             id="sad"
-                            name="sad"
+                            name="mood"
                             value="sad"
+                            required="required"
                         />
                         <label htmlFor="sad">:(</label>
                     </div>
@@ -50,10 +52,10 @@ class Editor extends Component {
                 </fieldset>
                 <Link to='/'>
                 <div className="form__submit">
-                    <button type="submit">Save</button>
+                    <button onClick={handleCreateMood} type="submit">Save</button>
                 </div>
                 <div className="form__cancel">
-                    <button type="submit">Cancel</button>
+                    <button onClick={handleDelete}  type="submit">Cancel</button>
                 </div>
                 </Link>
             </form>

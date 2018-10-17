@@ -20,24 +20,21 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <nav>
-          <ul>
-            <li><Link to='/'></Link></li>
-            <li><Link to='/editor'></Link></li>
-          </ul>
-        </nav>
         <Switch>
           <Route
             exact path='/'
-            render={(props) => 
-            < Home
-              handleAddFace={this.handleAddFace}
-            />
+            render={() =>
+              < Home
+                handleAddFace={this.handleAddFace}
+              />
             } />
           <Route
             path='/editor'
-            render={(props) =>
-              < Editor />
+            render={() =>
+              < Editor
+                handleCreateMood={this.handleCreateMood}
+                handleDelete={this.handleDelete}
+              />
             } />
         </Switch>
 
