@@ -1,0 +1,15 @@
+.home__header {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#3F9BD1;
+    color:#FFFFFF;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 100vh;
+}
+
+.home__add {
+    display: inline;
+}
