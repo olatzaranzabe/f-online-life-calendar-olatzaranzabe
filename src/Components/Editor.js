@@ -5,8 +5,11 @@ class Editor extends Component {
     render() {
         const {
             handleCreateMood,
-            handleDelete
+            handleDelete,
+            handleMessage,
+            handleDate
         } = this.props;
+
         return (
             <form>
                 <fieldset>
@@ -16,6 +19,7 @@ class Editor extends Component {
                         id="form__date"
                         className="form_date"
                         type="text"
+                        onChange={handleDate}
                     />
                 </fieldset>
                 <fieldset>
@@ -27,6 +31,7 @@ class Editor extends Component {
                             name="mood"
                             value="happy"
                             required="required"
+                            defaultChecked
                         />
                         <label htmlFor="happy">:)</label>
                     </div>
@@ -48,15 +53,17 @@ class Editor extends Component {
                         id="message"
                         className="form_date"
                         type="text"
+                        name="messageArea"
+                        onChange={handleMessage}
                     />
                 </fieldset>
                 <Link to='/'>
-                <div className="form__submit">
-                    <button onClick={handleCreateMood} type="submit">Save</button>
-                </div>
-                <div className="form__cancel">
-                    <button onClick={handleDelete}  type="submit">Cancel</button>
-                </div>
+                    <div className="form__submit">
+                        <button onClick={handleCreateMood} type="submit">Save</button>
+                    </div>
+                    <div className="form__cancel">
+                        <button onClick={handleDelete} type="reset">Cancel</button>
+                    </div>
                 </Link>
             </form>
         );

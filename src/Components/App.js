@@ -2,19 +2,54 @@ import React, { Component } from 'react';
 import '../Stylesheets/App.css';
 import Home from './Home';
 import Editor from './Editor';
-import { Link, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
+
+const differentMood = {
+  "1": ':)',
+  "2": ':('
+}
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-
+      dateValue: '',
+      inputValue: ''
     }
-    this.handleAddFace = this.handleAddFace.bind(this);
+    this.handleAddMood = this.handleAddMood.bind(this);
+    this.handleMessage = this.handleMessage.bind(this);
+    this.handleDate = this.handleDate.bind(this);
+    this.handleCreateMood = this.handleCreateMood.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
-  handleAddFace() {
+
+  handleAddMood() {
     console.log('click +');
+  }
+  handleDate(event) {
+    let inputDate = event.target.value;
+    this.setState((prevState) => {
+      return ({ ...prevState, dateValue: inputDate });
+    });
+  }
+  handleMessage(event) {
+    let inputMessage = event.target.value;
+    this.setState((prevState) => {
+      return ({ ...prevState, inputValue: inputMessage });
+    });
+    // this.setState({inputValue: inputMessage });
+    console.log(this.state.inputValue);
+    console.log(inputMessage)
+    console.log('create mood')
+  }
+
+  handleDelete() {
+    console.log('delete')
+  }
+
+  handleCreateMood() {
+    console.log('create mood')
   }
 
   render() {
@@ -32,6 +67,8 @@ class App extends Component {
             path='/editor'
             render={() =>
               < Editor
+                handleDate={this.handleDate}
+                handleMessage={this.handleMessage}
                 handleCreateMood={this.handleCreateMood}
                 handleDelete={this.handleDelete}
               />

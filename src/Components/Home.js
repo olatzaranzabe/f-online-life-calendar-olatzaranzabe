@@ -14,6 +14,8 @@ class Home extends Component {
                         <p className="home__add">+</p>
                     </header>
                 </Link>
+                <div className="home__faces">
+                </div>
             </div>
         );
     }
