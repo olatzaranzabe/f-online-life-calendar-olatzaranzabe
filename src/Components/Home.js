@@ -2,14 +2,13 @@ import React, { Component } from 'react';
 import '../Stylesheets/Home.css';
 
 class Home extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {}
-    }
     render() {
+        const {
+            handleAddFace
+        } = this.props;
         return (
             <div>
-                <header onClick={this.handleAddFace} className="home__header">
+                <header onClick={handleAddFace} className="home__header">
                     <p className="home__add">+</p>
                 </header>
             </div>
