@@ -13,3 +13,7 @@
 .home__add {
     display: inline;
 }
+
+.hidden {
+    display: none;
+}

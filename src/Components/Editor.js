@@ -49,15 +49,16 @@ class Editor extends Component {
                         <label htmlFor="sad">:(</label>
                     </div>
                 </fieldset>
-                <fieldset>
+                <fieldset className="form__optional__message">
                     <legend>Message</legend>
                     <label htmlFor="message"></label>
                     <input
                         id="message"
-                        className="form_date"
+                        className="form_message"
                         type="text"
                         name="messageArea"
                         onChange={handleMessage}
+                        placeholder="Why is it a good day?"
                     />
                 </fieldset>
                 <Link to='/'>
