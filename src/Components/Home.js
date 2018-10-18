@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../Stylesheets/Home.css';
 import { Link } from 'react-router-dom';
+import Faces from './Faces';
 
 class Home extends Component {
     render() {
@@ -15,6 +16,7 @@ class Home extends Component {
                     </header>
                 </Link>
                 <div className="home__faces">
+                    <Faces />
                 </div>
             </div>
         );
