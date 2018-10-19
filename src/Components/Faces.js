@@ -1,14 +1,27 @@
 import React, { Component } from 'react';
 
 class Faces extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {  }
-    }
+
     render() { 
+        const {
+            facesArray
+        } = this.props;
+        console.log(facesArray)
         return ( 
             <div>
-                
+                <ul>
+                {facesArray.map((face) => {
+                    if (face === ':)'){
+                        return (
+                            <li>:)</li>
+                        )} else {
+                            return (
+                                <li>:(</li>
+                            );
+                        }
+                    }
+                )}
+                </ul>
             </div>
          );
     }

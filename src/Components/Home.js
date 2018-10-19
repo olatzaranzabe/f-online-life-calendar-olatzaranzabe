@@ -6,8 +6,10 @@ import Faces from './Faces';
 class Home extends Component {
     render() {
         const {
-            handleAddFace
+            handleAddFace,
+            facesArray
         } = this.props;
+        // console.log(facesArray)
         return (
             <div>
                 <Link to='/editor'>
@@ -16,7 +18,9 @@ class Home extends Component {
                     </header>
                 </Link>
                 <div className="home__faces">
-                    <Faces />
+                    <Faces 
+                    facesArray={this.props.facesArray}
+                    />
                 </div>
             </div>
         );

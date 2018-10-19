@@ -11,7 +11,7 @@ class App extends Component {
     this.state = {
       dateValue: '',
       inputValue: '',
-      moodValue: ':)',
+      moodValue: '',
       facesArray: JSON.parse(localStorage.getItem("moodFaces")) || [] 
     }
     this.handleAddMood = this.handleAddMood.bind(this);
@@ -25,6 +25,7 @@ class App extends Component {
   handleAddMood() {
     console.log('click +');
   }
+
   handleDate(event) {
     let inputDate = event.target.value;
     this.setState((prevState) => {
@@ -34,7 +35,15 @@ class App extends Component {
   }
 
   handleStateMood(event) {
-    this.setState({ moodValue: event.target.value }, () => console.log(this.state.moodValue));
+    // console.log(event)
+    // console.log(event.target)
+    // console.log(event.target.value)
+    this.setState({ moodValue: event.target.value }, 
+      () => console.log(this.state.moodValue));
+    // console.log(event)
+    // this.setState((prevState) => {
+    //   return ({ ...prevState, moodValue: event.target.value });
+    // });
   }
 
   handleMessage(event) {
@@ -49,13 +58,17 @@ class App extends Component {
   }
 
   handleDelete() {
+    this.setState({dateValue: '', inputValue: '', moodValue: '' });
     console.log('delete')
   }
 
   handleCreateMood() {
     // remember localStorage only supports strings
     localStorage.setItem("moodFaces", JSON.stringify(this.state.facesArray));
-    console.log('create mood')
+    
+    let moodList = this.state.facesArray.push(this.state.moodValue);
+    console.log(this.state.facesArray)
+    console.log(moodList)
   }
 
   render() {
@@ -67,6 +80,7 @@ class App extends Component {
             render={() =>
               < Home
                 handleAddFace={this.handleAddFace}
+                facesArray={this.state.facesArray}
               />
             } />
           <Route

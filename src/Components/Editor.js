@@ -33,7 +33,7 @@ class Editor extends Component {
                             value=":)"
                             required="required"
                             onChange={handleStateMood}
-                            defaultChecked
+                            // defaultChecked
                         />
                         <label htmlFor="happy">:)</label>
                     </div>
