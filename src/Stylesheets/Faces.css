@@ -1,0 +1,33 @@
+.faces__list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style-type: none;
+    justify-content: space-between;
+    align-items: center;
+} 
+
+.face__element {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 4px;
+}
+
+.happy {
+    background-color: #FFCD00;
+    color: #4A4A4A;
+}
+
+.sad {
+    background-color: #FF532C;
+    color: #FFFFFF;
+}

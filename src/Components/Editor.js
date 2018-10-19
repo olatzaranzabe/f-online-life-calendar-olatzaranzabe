@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import '../Stylesheets/Editor.css';
 
 class Editor extends Component {
     render() {
@@ -12,9 +13,9 @@ class Editor extends Component {
         } = this.props;
 
         return (
-            <form>
-                <fieldset>
-                    <legend>Date</legend>
+            <form className="form__entire">
+                <fieldset className="form__part">
+                    <legend className="form__title">Date</legend>
                     <label htmlFor="form__date"></label>
                     <input
                         id="form__date"
@@ -23,8 +24,8 @@ class Editor extends Component {
                         onChange={handleDate}
                     />
                 </fieldset>
-                <fieldset>
-                    <legend>State</legend>
+                <fieldset className="form__part">
+                    <legend className="form__title">State</legend>
                     <div>
                         <input
                             type="radio"
@@ -49,8 +50,8 @@ class Editor extends Component {
                         <label htmlFor="sad">:(</label>
                     </div>
                 </fieldset>
-                <fieldset className="form__optional__message">
-                    <legend>Message</legend>
+                <fieldset className="form__part">
+                    <legend className="form__title">Message</legend>
                     <label htmlFor="message"></label>
                     <input
                         id="message"
@@ -63,10 +64,10 @@ class Editor extends Component {
                 </fieldset>
                 <Link to='/'>
                     <div className="form__submit">
-                        <button onClick={handleCreateMood} type="submit">Save</button>
+                        <button className="form__submit__button" onClick={handleCreateMood} type="submit">save</button>
                     </div>
                     <div className="form__cancel">
-                        <button onClick={handleDelete} type="reset">Cancel</button>
+                        <button className="form__submit__cancel" onClick={handleDelete} type="reset">cancel</button>
                     </div>
                 </Link>
             </form>

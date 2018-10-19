@@ -19,7 +19,7 @@ class Home extends Component {
                 </Link>
                 <div className="home__faces">
                     <Faces 
-                    facesArray={this.props.facesArray}
+                    facesArray={facesArray}
                     />
                 </div>
             </div>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../Stylesheets/Faces.css';
 
 class Faces extends Component {
 
@@ -9,14 +10,14 @@ class Faces extends Component {
         console.log(facesArray)
         return ( 
             <div>
-                <ul>
+                <ul className="faces__list">
                 {facesArray.map((face) => {
                     if (face === ':)'){
                         return (
-                            <li>:)</li>
+                            <li className="face__element happy">:)</li>
                         )} else {
                             return (
-                                <li>:(</li>
+                                <li className="face__element sad" sad>:(</li>
                             );
                         }
                     }

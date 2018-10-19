@@ -1,0 +1,25 @@
+.form__entire {
+    margin: 20px;
+}
+.form__submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    background-color: #3F9BD1;
+    margin: 10px 0;
+}
+
+.form__submit__button {
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #F3F8FC;
+}
+
+.form__submit__cancel {
+    text-transform: capitalize;  
+    font-size: 26px;
+    font-weight: bold;
+    color:#AEAEAE;
+}
