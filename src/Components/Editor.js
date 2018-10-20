@@ -9,9 +9,11 @@ class Editor extends Component {
             handleStateMood,
             handleDelete,
             handleMessage,
-            handleDate
+            handleDate,
+            moodValue
         } = this.props;
-
+        console.log(moodValue)
+        let formMessage = moodValue === ":)" ? null : 'hidden';
         return (
             <form className="form__entire">
                 <fieldset className="form__part">
@@ -50,7 +52,10 @@ class Editor extends Component {
                         <label htmlFor="sad">:(</label>
                     </div>
                 </fieldset>
-                <fieldset className="form__part">
+                <fieldset 
+                // className="form__part hidden"
+                  className= {formMessage}
+                >
                     <legend className="form__title">Message</legend>
                     <label htmlFor="message"></label>
                     <input

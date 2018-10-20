@@ -17,7 +17,7 @@ class Faces extends Component {
                             <li key={index} className="face__element happy">:)</li>
                         )} else {
                             return (
-                                <li key={index} className="face__element sad" sad>:(</li>
+                                <li key={index} className="face__element sad" >:(</li>
                             );
                         }
                     }

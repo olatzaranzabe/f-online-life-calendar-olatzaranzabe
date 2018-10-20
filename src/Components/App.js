@@ -4,6 +4,8 @@ import Home from './Home';
 import Editor from './Editor';
 import { Route, Switch } from 'react-router-dom';
 
+let inputMessage;
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -12,7 +14,7 @@ class App extends Component {
       dateValue: '',
       inputValue: '',
       moodValue: '',
-      facesArray: JSON.parse(localStorage.getItem("moodFaces")) || [] 
+      facesArray: JSON.parse(localStorage.getItem("moodFaces")) || []
     }
     this.handleAddMood = this.handleAddMood.bind(this);
     this.handleMessage = this.handleMessage.bind(this);
@@ -35,37 +37,30 @@ class App extends Component {
   }
 
   handleStateMood(event) {
-    // console.log(event)
-    // console.log(event.target)
-    // console.log(event.target.value)
-    this.setState({ moodValue: event.target.value }, 
+    this.setState({ moodValue: event.target.value, message: inputMessage },
       () => console.log(this.state.moodValue));
-    // console.log(event)
-    // this.setState((prevState) => {
-    //   return ({ ...prevState, moodValue: event.target.value });
-    // });
   }
 
   handleMessage(event) {
     let inputMessage = event.target.value;
-    this.setState((prevState) => {
-      return ({ ...prevState, inputValue: inputMessage });
-    });
-    // this.setState({inputValue: inputMessage });
-    console.log(this.state.inputValue);
-    console.log(inputMessage)
-    console.log('create mood')
+    // this.setState((prevState) => {
+    //   return ({ ...prevState, moodValue: event.target.value, message: inputMessage});
+    // });
+    // console.log(inputMessage)
+   
+    this.setState({ moodValue: event.target.value, message: inputMessage },
+      () => console.log(this.state.moodValue));
   }
 
   handleDelete() {
-    this.setState({dateValue: '', inputValue: '', moodValue: '' });
+    this.setState({ dateValue: '', inputMessage: '', moodValue: '' });
     console.log('delete')
   }
 
   handleCreateMood() {
     // remember localStorage only supports strings
     localStorage.setItem("moodFaces", JSON.stringify(this.state.facesArray));
-    
+
     let moodList = this.state.facesArray.push(this.state.moodValue);
     console.log(this.state.facesArray)
     console.log(moodList)
@@ -87,6 +82,7 @@ class App extends Component {
             path='/editor'
             render={() =>
               < Editor
+                moodValue={this.state.moodValue}
                 handleDate={this.handleDate}
                 handleMessage={this.handleMessage}
                 handleStateMood={this.handleStateMood}
