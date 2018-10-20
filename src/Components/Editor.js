@@ -13,7 +13,7 @@ class Editor extends Component {
             moodValue
         } = this.props;
         console.log(moodValue)
-        let formMessage = moodValue === ":)" ? null : 'hidden';
+        let formMessage = moodValue === ":)" ? 'form__part' : 'hidden';
         return (
             <form className="form__entire">
                 <fieldset className="form__part">
@@ -21,46 +21,48 @@ class Editor extends Component {
                     <label htmlFor="form__date"></label>
                     <input
                         id="form__date"
-                        className="form_date"
+                        className="form__info"
                         type="text"
                         onChange={handleDate}
                     />
                 </fieldset>
                 <fieldset className="form__part">
                     <legend className="form__title">State</legend>
-                    <div>
-                        <input
-                            type="radio"
-                            id="happy"
-                            name="mood"
-                            value=":)"
-                            required="required"
-                            onChange={handleStateMood}
+                    <div className="form__radios">
+                        <div>
+                            <input
+                                type="radio"
+                                id="happy"
+                                name="mood"
+                                value=":)"
+                                required="required"
+                                onChange={handleStateMood}
                             // defaultChecked
-                        />
-                        <label htmlFor="happy">:)</label>
-                    </div>
-                    <div>
-                        <input
-                            type="radio"
-                            id="sad"
-                            name="mood"
-                            value=":("
-                            required="required"
-                            onChange={handleStateMood}
-                        />
-                        <label htmlFor="sad">:(</label>
+                            />
+                            <label htmlFor="happy">:)</label>
+                        </div>
+                        <div>
+                            <input
+                                type="radio"
+                                id="sad"
+                                name="mood"
+                                value=":("
+                                required="required"
+                                onChange={handleStateMood}
+                            />
+                            <label htmlFor="sad">:(</label>
+                        </div>
                     </div>
                 </fieldset>
-                <fieldset 
-                // className="form__part hidden"
-                  className= {formMessage}
+                <fieldset
+                    // className="form__part hidden"
+                    className={formMessage}
                 >
                     <legend className="form__title">Message</legend>
                     <label htmlFor="message"></label>
                     <input
                         id="message"
-                        className="form_message"
+                        className="form__info"
                         type="text"
                         name="messageArea"
                         onChange={handleMessage}

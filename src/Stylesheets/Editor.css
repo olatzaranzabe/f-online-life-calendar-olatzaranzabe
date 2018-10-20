@@ -1,6 +1,22 @@
 .form__entire {
     margin: 20px;
 }
+
+.form__part {
+    border: 0px;
+}
+
+.form__info {
+    border: 1px solid #AEAEAE;
+    border-radius: 5px;
+    height: 26px;
+    text-align: center;
+}
+
+.form__radios{
+    display: flex;
+    flex-direction: row;
+}
 .form__submit {
     display: flex;
     align-items: center;
