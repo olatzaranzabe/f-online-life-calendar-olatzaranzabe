@@ -11,13 +11,13 @@ class Faces extends Component {
         return ( 
             <div>
                 <ul className="faces__list">
-                {facesArray.map((face) => {
+                {facesArray.map((face, index) => {
                     if (face === ':)'){
                         return (
-                            <li className="face__element happy">:)</li>
+                            <li key={index} className="face__element happy">:)</li>
                         )} else {
                             return (
-                                <li className="face__element sad" sad>:(</li>
+                                <li key={index} className="face__element sad" sad>:(</li>
                             );
                         }
                     }
