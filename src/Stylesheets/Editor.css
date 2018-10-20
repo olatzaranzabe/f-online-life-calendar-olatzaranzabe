@@ -11,12 +11,24 @@
     border-radius: 5px;
     height: 26px;
     text-align: center;
+    color:#AEAEAE;
 }
 
 .form__radios{
     display: flex;
     flex-direction: row;
 }
+
+.form__input {
+    border-radius: 0;
+}
+
+.form__input:checked {
+    background-color: #3F9BD1;
+    color: #FFFFFF;
+    border-radius: 0;
+}
+
 .form__submit {
     display: flex;
     align-items: center;

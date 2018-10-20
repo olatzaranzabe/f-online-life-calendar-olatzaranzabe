@@ -22,7 +22,7 @@ class Editor extends Component {
                     <input
                         id="form__date"
                         className="form__info"
-                        type="text"
+                        type="date"
                         onChange={handleDate}
                     />
                 </fieldset>
@@ -31,6 +31,7 @@ class Editor extends Component {
                     <div className="form__radios">
                         <div>
                             <input
+                                className="form__input"
                                 type="radio"
                                 id="happy"
                                 name="mood"
@@ -43,6 +44,7 @@ class Editor extends Component {
                         </div>
                         <div>
                             <input
+                                className="form__input"
                                 type="radio"
                                 id="sad"
                                 name="mood"
