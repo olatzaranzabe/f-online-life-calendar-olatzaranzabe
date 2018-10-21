@@ -12,7 +12,7 @@ class Editor extends Component {
             handleDate,
             moodValue
         } = this.props;
-        console.log(moodValue)
+
         let formMessage = moodValue === ":)" ? 'form__part' : 'hidden';
         return (
             <form className="form__entire">
