@@ -58,7 +58,7 @@ class App extends Component {
   handleCreateMood() {
     // remember localStorage only supports strings
     localStorage.setItem("moodFaces", JSON.stringify(this.state.facesArray));
-    console.log(this.state.facesArray)
+     console.log(this.state.facesArray)
     let moodList = this.state.facesArray.push(this.state.moodValue);
     // let info = ({dateValue: inputDate, moodValue: stateMood, message: inputMessage });
     // let moodList = this.state.facesArray.push({dateValue: inputDate, moodValue: event.target.value, message: inputMessage });
