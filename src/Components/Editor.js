@@ -57,14 +57,13 @@ class Editor extends Component {
                     </div>
                 </fieldset>
                 <fieldset
-                    // className="form__part hidden"
                     className={formMessage}
                 >
                     <legend className="form__title">Message</legend>
                     <label htmlFor="message"></label>
-                    <input
+                    <textarea
                         id="message"
-                        className="form__info"
+                        className="form__info message"
                         type="text"
                         name="messageArea"
                         onChange={handleMessage}

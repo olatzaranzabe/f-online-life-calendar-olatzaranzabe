@@ -4,6 +4,7 @@
 
 .form__part {
     border: 0px;
+    margin: 40px;
 }
 
 .form__info {
@@ -35,7 +36,8 @@
     justify-content: center;
     height: 40px;
     background-color: #3F9BD1;
-    margin: 10px 0;
+    margin: 10px 160px;
+
 }
 
 .form__submit__button {
@@ -43,6 +45,14 @@
     font-weight: bold;
     text-transform: uppercase;
     color: #F3F8FC;
+    background-color: #3F9BD1;
+    border: none;
+}
+
+.form__cancel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .form__submit__cancel {
@@ -50,4 +60,10 @@
     font-size: 26px;
     font-weight: bold;
     color:#AEAEAE;
+}
+
+.message {
+    width: 200px;
+    height: 100px;
+    overflow: auto;
 }
