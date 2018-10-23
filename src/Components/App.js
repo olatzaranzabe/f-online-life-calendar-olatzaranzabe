@@ -4,15 +4,15 @@ import Home from './Home';
 import Editor from './Editor';
 import { Route, Switch } from 'react-router-dom';
 
-// let inputMessage;
-// let stateMood;
-
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      facesArray: JSON.parse(localStorage.getItem("moodFaces")) || [{ dateValue: '', moodValue: '', message: '',}]
+      dateValue: '',
+      inputValue: '',
+      moodValue: ':)',
+      facesArray: JSON.parse(localStorage.getItem("moodFaces")) || [this.state.facesArray]
     }
 
     this.handleMessage = this.handleMessage.bind(this);
@@ -28,8 +28,6 @@ class App extends Component {
       return ({ ...prevState, dateValue: inputDate });
     });
     console.log(this.state.dateValue)
-    // this.setState({dateValue: inputDate, moodValue: event.target.value, message: inputMessage },
-    //   () => console.log(this.state.message));
   }
 
   handleStateMood(event) {
@@ -45,23 +43,16 @@ class App extends Component {
       return ({ ...prevState, message: inputMessage});
     });
     console.log(inputMessage)
-   
-    // this.setState({ moodValue: event.target.value, message: inputMessage },
-    //   () => console.log(this.state.message));
   }
 
   handleDelete() {
     this.setState({ dateValue: '', inputMessage: '', moodValue: '' });
-    console.log('delete')
   }
 
   handleCreateMood() {
-    // remember localStorage only supports strings
     localStorage.setItem("moodFaces", JSON.stringify(this.state.facesArray));
      console.log(this.state.facesArray)
     let moodList = this.state.facesArray.push(this.state.moodValue);
-    // let info = ({dateValue: inputDate, moodValue: stateMood, message: inputMessage });
-    // let moodList = this.state.facesArray.push({dateValue: inputDate, moodValue: event.target.value, message: inputMessage });
     console.log(this.state.facesArray)
     console.log(moodList)
   }

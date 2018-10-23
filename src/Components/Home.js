@@ -9,7 +9,7 @@ class Home extends Component {
             handleAddFace,
             facesArray
         } = this.props;
-        // console.log(facesArray)
+
         return (
             <div>
                 <Link to='/editor'>
